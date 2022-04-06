@@ -1,0 +1,82 @@
+@import './reset.scss';
+@import './theme.scss';
+
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+body {
+	font-family: var(--primary-font);
+	background: var(--primary-color);
+	font-size: var(--primary-font-size);
+	h1,
+	h2 {
+		font-family: var(--secondary-font);
+		font-size: var(--secondary-font-size);
+		color: var(--primary-text-color);
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
+	p,
+	h3,
+	span {
+		font-size: var(--primary-font-size);
+		color: var(--secondary-text-color);
+	}
+	a {
+		color: var(--primary-text-color);
+	}
+	main {
+		width: 50%;
+		margin: auto auto;
+		margin-top: 7rem;
+	}
+	@media screen and (max-width: 1080px) {
+		main {
+			width: 70%;
+		}
+	}
+	@media screen and (max-width: 480px) {
+		main {
+			width: 90%;
+		}
+	}
+}
+
+// Keyframe ANIMATIONS
+@keyframes loading {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes appearFromBottom {
+	0% {
+		transform: translateY(20vh);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes appearFromTop {
+	0% {
+		transform: translateY(-20vh);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

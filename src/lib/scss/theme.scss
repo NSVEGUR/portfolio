@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+:root {
+	//Light theme
+	--primary-color: #fcfcfc;
+	--primary-accent-color: #ffffff;
+	--secondary-accent-color: #f3f3f3;
+	--primary-text-color: #000000;
+	--secondary-text-color: #9e9e9f;
+	//Fonts
+	--primary-font: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial',
+		sans-serif;
+	--secondary-font: 'DM Serif Display', serif;
+	//Fonts-size:
+	--primary-font-size: 1rem;
+	--secondary-font-size: 1.4rem;
+}
+
+.dark-theme {
+	//Dark theme
+	--primary-color: #161616;
+	--primary-accent-color: #161616;
+	--secondary-accent-color: #222222;
+	--primary-text-color: #ffffff;
+	--secondary-text-color: #a0a0a0;
+}
