@@ -3,7 +3,7 @@
 	export let width: string | null;
 	export let buttonBase: dockIcon;
 	const getTarget = (span: string): string => {
-		const blanks = ['Github', 'Twitter'];
+		const blanks = ['Github', 'Twitter', 'Mail'];
 		if (blanks.includes(span)) return '_blank';
 		return '';
 	};
@@ -11,14 +11,16 @@
 
 <a
 	href={buttonBase.route}
-	class={`icon ${buttonBase.type}`}
+	class={buttonBase.type}
+	data-class={buttonBase.name}
+	data-iconid={buttonBase.id}
 	id={buttonBase.name}
 	target={getTarget(buttonBase.name)}
 >
 	<button {...$$props} style="border-radius: {`${parseFloat(width) * 3}px`}">
 		<slot />
 	</button>
-	<span class:active={buttonBase.name == 'Home'} class="icon-dot" />
+	<span class:active={buttonBase.name == 'Home'} class="icon-dot" data-dotid={buttonBase.id} />
 	<span class="icon-title">{buttonBase.name}</span>
 </a>
 

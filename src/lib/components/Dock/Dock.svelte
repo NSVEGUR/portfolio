@@ -1,7 +1,33 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import DockItem from './DockItem.svelte';
-	import { dockIcons } from '../../store/store';
+	import { dockIcons, Route } from '../../store/store';
 	let mouseX: number | null = null;
+	const routingIcons: string[] = ['Home', 'About', 'Education', 'Blogs', 'Projects'];
+	onMount(() => {
+		const icons = document.querySelectorAll('.icon');
+		const theme = document.getElementById('Theme');
+		icons.forEach((icon) => {
+			icon.addEventListener('click', (e: any) => {
+				e.preventDefault();
+				const route = e.target.closest('.icon').dataset?.class;
+				$Route = route;
+				if (routingIcons.includes(route)) {
+					const iconDots = document.querySelectorAll('.icon-dot');
+					iconDots.forEach((iconDot) => {
+						iconDot.classList.remove('active');
+					});
+					const activeIcon = e.target.closest('.icon').dataset?.iconid;
+					const activeDot: HTMLElement = document.querySelector(`[data-dotid="${activeIcon}"]`);
+					activeDot.classList.add('active');
+				}
+			});
+		});
+		theme.addEventListener('click', () => {
+			document.body.classList.toggle('dark-theme');
+			theme.querySelector('i').classList.toggle('fa-sun');
+		});
+	});
 </script>
 
 <section class="dock-container">
@@ -10,7 +36,7 @@
 		on:mousemove={(event) => (mouseX = event.x)}
 		on:mouseleave={() => (mouseX = null)}
 	>
-		{#each $dockIcons as icon}
+		{#each dockIcons as icon}
 			{#if icon.type !== 'div'}
 				<DockItem {mouseX} section={icon} />
 			{:else}

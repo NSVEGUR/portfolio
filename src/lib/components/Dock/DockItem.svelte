@@ -2,13 +2,16 @@
 	import { interpolate } from 'popmotion';
 	import { spring } from 'svelte/motion';
 	import ButtonBase from './ButtonBase.svelte';
+	import type { dockIcon } from '../../store/store';
+	import { onMount } from 'svelte';
 
-	export let section: {
-		class: string;
-		type: string;
-		name: string;
-		route: string;
-	};
+	let screenWidth: number | null = 1200;
+
+	onMount(() => {
+		screenWidth = window.innerWidth;
+	});
+
+	export let section: dockIcon;
 	export let mouseX: number | null;
 
 	let el: HTMLElement;
@@ -70,14 +73,26 @@
 	$: raf = requestAnimationFrame(() => animate(mouseX));
 </script>
 
+<svelte:window
+	on:resize={() => {
+		screenWidth = window.innerWidth;
+	}}
+/>
+
 <section>
-	<ButtonBase {width} buttonBase={section}>
-		<i
-			bind:this={el}
-			style="width: {width}; height: {width}; font-size: {`${parseFloat(width) / 2}rem`};"
-			class={section.class}
-		/>
-	</ButtonBase>
+	{#if screenWidth >= 700}
+		<ButtonBase {width} buttonBase={section}>
+			<i
+				bind:this={el}
+				style="width: {width}; height: {width}; font-size: {`${parseFloat(width) / 2}rem`};"
+				class={section.class}
+			/>
+		</ButtonBase>
+	{:else}
+		<ButtonBase {width} buttonBase={section}>
+			<i bind:this={el} style="width: {width}; height: {width};" class={section.class} />
+		</ButtonBase>
+	{/if}
 </section>
 
 <style lang="scss">
