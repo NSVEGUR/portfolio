@@ -4,21 +4,21 @@
 </script>
 
 <svelte:head>
-	<title>NSVegur</title>
+	<title>Nagasai Vegur</title>
 </svelte:head>
 
 <Motion variants={pageTransitionVariants} initial="hidden" animate="visible" let:motion>
 	<div use:motion>
 		<h2>Nagasai Vegur</h2>
-		<p>A Developer, Designer and Computer enthusiast.</p>
+		<h3>A Developer, Designer and Computer enthusiast.</h3>
 		<div class="small-divider" />
-		<h3>Experimenting with interfaces in Web and Native. Passionate about Data.</h3>
-		<h3>
+		<p>Experimenting with interfaces in Web and Native. Passionate about Data.</p>
+		<p>
 			Exploring computer science engineering in second year at
 			<a class="small-underline" href="https://iiitdm.ac.in/"
 				><i class="fas fa-university" /> IIITDM.</a
 			>
-		</h3>
+		</p>
 	</div>
 </Motion>
 
@@ -34,7 +34,7 @@
 		position: relative;
 	}
 
-	h3 a::after {
+	p a::after {
 		content: '';
 		position: absolute;
 		left: 0;

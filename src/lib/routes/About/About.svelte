@@ -10,9 +10,9 @@
 <Motion variants={pageTransitionVariants} initial="hidden" animate="visible" let:motion>
 	<div class="dotted" use:motion>
 		<h2>About</h2>
-		<p>Things quite <span>interest</span> describe me.</p>
+		<h3>Things quite <span>interest</span> describe me.</h3>
 		<div>
-			<h3>
+			<p>
 				Innovative individual with passion in learning something new, and enjoy trying out new
 				technologies. Interested in SDE Intern at Hike where I can apply my technical skills in
 				coding and software design to fulfil the clients’ particular requirements and augment the
@@ -20,14 +20,14 @@
 					href="https://drive.google.com/file/d/1qtKLrpesOIMoixgejV707UBGfiYe-ebU/view?usp=sharing"
 					target="_blank">here</a
 				>.
-			</h3>
-			<span>Blah Blah.</span>
+			</p>
+			<span>Blah things.</span>
 		</div>
 		<div>
-			<h3>
+			<p>
 				Processing with <a href="https://github.com/NSVEGUR">typescript</a> , painting in css, reacting
 				on svelte, widgeting with flutter, competing in cplusplus, skating on python and many more.
-			</h3>
+			</p>
 			<span>I'm Cooking.</span>
 		</div>
 		<div>
@@ -46,7 +46,7 @@
 </Motion>
 
 <style lang="scss">
-	p {
+	h3 {
 		span {
 			text-decoration: line-through;
 			color: var(--primary-text-color);
@@ -55,7 +55,7 @@
 	a {
 		position: relative;
 	}
-	h3 a::after {
+	p a::after {
 		content: '';
 		position: absolute;
 		left: 0;

@@ -3,7 +3,7 @@ export const pageTransitionVariants = {
 		opacity: 1,
 		y: 0,
 		transition: {
-			duration: 0.7,
+			duration: 1,
 			type: 'spring'
 		}
 	},

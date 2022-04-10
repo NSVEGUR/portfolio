@@ -2,8 +2,9 @@
 	import { interpolate } from 'popmotion';
 	import { spring } from 'svelte/motion';
 	import ButtonBase from './ButtonBase.svelte';
-	import type { dockIcon } from '../../utils/data';
+	import type { dockIcon } from '../../utils/data/dock';
 	import { onMount } from 'svelte';
+	import { M, Motion } from 'svelte-motion';
 
 	let screenWidth: number | null = 1200;
 
@@ -71,6 +72,23 @@
 	}
 
 	$: raf = requestAnimationFrame(() => animate(mouseX));
+
+	const click = (e: any) => {
+		e.target.closest('.shake').animate(
+			[
+				{
+					transform: 'translateY(-5rem)'
+				},
+				{
+					transform: 'translateX(0)'
+				}
+			],
+			{
+				duration: 750,
+				easing: 'cubic-bezier(0.42, 0, 0.58, 1)'
+			}
+		);
+	};
 </script>
 
 <svelte:window
@@ -81,13 +99,15 @@
 
 <section>
 	{#if screenWidth >= 700}
-		<ButtonBase {width} buttonBase={section}>
-			<i
-				bind:this={el}
-				style="width: {width}; height: {width}; font-size: {`${parseFloat(width) / 2}rem`};"
-				class={section.class}
-			/>
-		</ButtonBase>
+		<div on:click={click} class="shake">
+			<ButtonBase {width} buttonBase={section}>
+				<i
+					bind:this={el}
+					style="width: {width}; height: {width}; font-size: {`${parseFloat(width) / 2}rem`};"
+					class={section.class}
+				/>
+			</ButtonBase>
+		</div>
 	{:else}
 		<ButtonBase {width} buttonBase={section}>
 			<i bind:this={el} style="width: {width}; height: {width};" class={section.class} />

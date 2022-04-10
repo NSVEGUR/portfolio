@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import DockItem from './DockItem.svelte';
-	import { dockIcons } from '../../utils/data';
+	import { dockIcons } from '../../utils/data/dock';
 	import { Route } from '../../store/store';
 	let mouseX: number | null = null;
 	const routingIcons: string[] = ['Home', 'About', 'Education', 'Blogs', 'Projects'];
 	onMount(() => {
 		const icons = document.querySelectorAll('.icon');
 		const theme = document.getElementById('Theme');
+		const sound = document.getElementById('Sound');
 		icons.forEach((icon) => {
 			icon.addEventListener('click', (e: any) => {
 				e.preventDefault();
@@ -27,6 +28,9 @@
 		theme.addEventListener('click', () => {
 			document.body.classList.toggle('dark-theme');
 			theme.querySelector('i').classList.toggle('fa-sun');
+		});
+		sound.addEventListener('click', () => {
+			sound.querySelector('i').classList.toggle('fa-volume-up');
 		});
 	});
 </script>

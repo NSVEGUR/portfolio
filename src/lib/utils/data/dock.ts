@@ -78,7 +78,7 @@ export const dockIcons = [
 	},
 	{
 		id: 10,
-		class: 'fas fa-volume-up fa-2x',
+		class: 'fas fa-volume-off fa-2x',
 		type: 'icon',
 		name: 'Sound',
 		route: ''

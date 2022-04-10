@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { dockIcon } from '../../utils/data';
+	import type { dockIcon } from '../../utils/data/dock';
 	export let width: string | null;
 	export let buttonBase: dockIcon;
 	const getTarget = (span: string): string => {
@@ -71,7 +71,7 @@
 		padding: 0 7px;
 		border-radius: 5px;
 		backdrop-filter: blur(5px);
-		background-color: var(--secondary-accent-color);
+		background-color: var(--primary-color);
 
 		box-shadow: inset 0 0 0 0.1px rgb(245 245 245 / 70%), hsla(0, 0%, 0%, 0.3) 2px 5px 10px;
 		display: none;
