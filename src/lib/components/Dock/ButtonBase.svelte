@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { dockIcon } from '../../store/store';
+	import type { dockIcon } from '../../utils/data';
 	export let width: string | null;
 	export let buttonBase: dockIcon;
 	const getTarget = (span: string): string => {

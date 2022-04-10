@@ -8,13 +8,14 @@
 	--secondary-accent-color: #f3f3f3;
 	--primary-text-color: #000000;
 	--secondary-text-color: #9e9e9f;
+	--dotted-border: #e3e2e2;
 	//Fonts
 	--primary-font: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial',
 		sans-serif;
 	--secondary-font: 'DM Serif Display', serif;
 	//Fonts-size:
 	--primary-font-size: 1rem;
-	--secondary-font-size: 1.4rem;
+	--secondary-font-size: 2rem;
 }
 
 .dark-theme {
@@ -24,4 +25,5 @@
 	--secondary-accent-color: #222222;
 	--primary-text-color: #ffffff;
 	--secondary-text-color: #a0a0a0;
+	--dotted-border: #313030;
 }

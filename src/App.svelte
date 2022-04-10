@@ -6,6 +6,7 @@
 	import Blogs from './lib/routes/Blogs/Blogs.svelte';
 	import Education from './lib/routes/Education/Education.svelte';
 	import { Route } from './lib/store/store';
+	import { onMount } from 'svelte';
 
 	let componentRoute = Home;
 
@@ -28,6 +29,13 @@
 		default:
 			break;
 	}
+
+	onMount(() => {
+		const faviconTag: any = document.getElementById('faviconTag');
+		const isDark = window.matchMedia('(prefers-color-scheme: dark)');
+		if (isDark.matches) faviconTag.href = '/favicon-light.ico';
+		else faviconTag.href = '/favicon-dark.ico';
+	});
 </script>
 
 <main>

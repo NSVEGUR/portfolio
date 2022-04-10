@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import DockItem from './DockItem.svelte';
-	import { dockIcons, Route } from '../../store/store';
+	import { dockIcons } from '../../utils/data';
+	import { Route } from '../../store/store';
 	let mouseX: number | null = null;
 	const routingIcons: string[] = ['Home', 'About', 'Education', 'Blogs', 'Projects'];
 	onMount(() => {

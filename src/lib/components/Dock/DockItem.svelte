@@ -2,7 +2,7 @@
 	import { interpolate } from 'popmotion';
 	import { spring } from 'svelte/motion';
 	import ButtonBase from './ButtonBase.svelte';
-	import type { dockIcon } from '../../store/store';
+	import type { dockIcon } from '../../utils/data';
 	import { onMount } from 'svelte';
 
 	let screenWidth: number | null = 1200;
