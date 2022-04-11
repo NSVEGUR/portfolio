@@ -52,22 +52,26 @@
 										layout
 										initial={{ opacity: 0 }}
 										animate={{ opacity: 1 }}
-										exit={{ opacity: 0 }}
+										exit={{
+											opacity: 0,
+											transition: {
+												type: 'spring',
+												duration: 0.5
+											}
+										}}
 										let:motion={m4}
 									>
 										<div use:m4 class="about-project">
-											<div>
-												<img src="/projects/magicdot.png" alt="project-img" />
+											<div class="project-img">
+												<img src="/projects/{project.img}.png" alt="project-img" />
 											</div>
 											<div class="about-text">
 												<p>
-													<span>Mollit</span> est sit irure ea. Irure mollit commodo ipsum ad id nostrud
-													commodo pariatur esse. Culpa enim adipisicing Lorem et mollit et anim dolor
-													laborum quis culpa aute eiusmod.
+													<span />{project.description}
 												</p>
 												<div>
-													<a href="https://github.com/">Source</a>
-													<a href="https://github.com/">Demo</a>
+													<a href={project.source}>Source</a>
+													<a href={project.demo}>Demo</a>
 												</div>
 											</div>
 										</div>
@@ -83,10 +87,6 @@
 </Motion>
 
 <style lang="scss">
-	img {
-		max-width: 100%;
-		max-height: 100%;
-	}
 	.head {
 		padding: 0 20px;
 	}
@@ -96,15 +96,12 @@
 	}
 	a {
 		position: relative;
-		&:after {
-			content: '';
-			position: absolute;
-			left: 0;
-			bottom: 0px;
-			height: 1px;
-			width: 100%;
-			opacity: 0.5;
-			background: var(--secondary-text-color);
+		background: var(--dotted-border);
+		padding: 0 5px;
+		border-radius: 5px;
+		&:hover {
+			transition: all 0.3s;
+			box-shadow: inset 0 0 0 0.1px rgb(245 245 245 / 70%), hsla(0, 0%, 0%, 0.3) 2px 5px 10px;
 		}
 	}
 	ul {
@@ -130,6 +127,10 @@
 		min-height: 60px;
 		gap: 10px;
 		cursor: pointer;
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
 		.project-dot {
 			width: 100%;
 			flex: 1;
@@ -148,19 +149,29 @@
 	.about-project {
 		display: flex;
 		padding: 10px;
-		gap: 10px;
+		gap: 15px;
+		height: 100%;
 		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		text-align: justify;
+		.project-img {
+			height: 100%;
+			width: 50%;
+		}
 		img {
 			border-radius: 10px;
-		}
-		&:last-child div {
-			width: 70%;
+			max-width: 100%;
+			max-height: 100%;
 		}
 		.about-text {
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
+			height: 100%;
+			width: 50%;
+			justify-content: space-evenly;
 			div {
+				margin-top: 20px;
 				display: flex;
 				gap: 10px;
 			}
