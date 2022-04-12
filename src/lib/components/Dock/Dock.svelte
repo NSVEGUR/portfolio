@@ -2,13 +2,29 @@
 	import { onMount } from 'svelte';
 	import DockItem from './DockItem.svelte';
 	import { dockIcons } from '../../utils/data/dock';
-	import { Route } from '../../store/store';
+	import { Route, SoundFlag } from '../../store/store';
 	let mouseX: number | null = null;
 	const routingIcons: string[] = ['Home', 'About', 'Education', 'Blogs', 'Projects'];
 	onMount(() => {
 		const icons = document.querySelectorAll('.icon');
 		const theme = document.getElementById('Theme');
 		const sound = document.getElementById('Sound');
+		const clickables = document.querySelectorAll('.sound');
+		const clickSound = new Audio('/musics/click.wav');
+		const soundOn = new Audio('/musics/soundon.wav');
+		const soundOff = new Audio('/musics/soundoff.wav');
+		const themeSound = new Audio('/musics/theme.wav');
+
+		clickables.forEach((clickable) => {
+			clickable.addEventListener('click', (e: any) => {
+				const route = e.target.closest('.sound').dataset?.class;
+				if (route === 'Theme' || route === 'Sound') return;
+				if ($SoundFlag) {
+					clickSound.play();
+				}
+			});
+		});
+
 		icons.forEach((icon) => {
 			icon.addEventListener('click', (e: any) => {
 				e.preventDefault();
@@ -28,9 +44,18 @@
 		theme.addEventListener('click', () => {
 			document.body.classList.toggle('dark-theme');
 			theme.querySelector('i').classList.toggle('fa-sun');
+			if ($SoundFlag) {
+				themeSound.play();
+			}
 		});
 		sound.addEventListener('click', () => {
 			sound.querySelector('i').classList.toggle('fa-volume-up');
+			if ($SoundFlag) {
+				soundOff.play();
+			} else {
+				soundOn.play();
+			}
+			$SoundFlag = !$SoundFlag;
 		});
 	});
 </script>

@@ -79,8 +79,8 @@
 	.active {
 		position: absolute;
 		bottom: -0.2rem;
-		width: 3px;
-		height: 3px;
+		width: 4px;
+		height: 4px;
 		border-radius: 50%;
 		background: var(--secondary-text-color);
 	}

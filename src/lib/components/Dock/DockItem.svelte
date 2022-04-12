@@ -4,7 +4,6 @@
 	import ButtonBase from './ButtonBase.svelte';
 	import type { dockIcon } from '../../utils/data/dock';
 	import { onMount } from 'svelte';
-	import { M, Motion } from 'svelte-motion';
 
 	let screenWidth: number | null = 1200;
 

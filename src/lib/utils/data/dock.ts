@@ -2,35 +2,35 @@ export const dockIcons = [
 	{
 		id: 1,
 		class: 'fas fa-home fa-2x',
-		type: 'icon',
+		type: 'icon sound',
 		name: 'Home',
 		route: ''
 	},
 	{
 		id: 2,
 		class: 'fas fa-user fa-2x',
-		type: 'icon',
+		type: 'icon sound',
 		name: 'About',
 		route: ''
 	},
 	{
 		id: 3,
 		class: 'fas fa-lightbulb fa-2x',
-		type: 'icon',
+		type: 'icon sound',
 		name: 'Projects',
 		route: ''
 	},
 	{
 		id: 4,
 		class: 'fas fa-pencil-alt fa-2x',
-		type: 'icon',
+		type: 'icon sound',
 		name: 'Blogs',
 		route: ''
 	},
 	{
 		id: 5,
 		class: 'fas fa-user-graduate fa-2x',
-		type: 'icon',
+		type: 'icon sound',
 		name: 'Education',
 		route: ''
 	},
@@ -44,21 +44,21 @@ export const dockIcons = [
 	{
 		id: 6,
 		class: 'fab fa-github fa-2x',
-		type: 'link',
+		type: 'link sound',
 		name: 'Github',
 		route: 'https://github.com/NSVEGUR'
 	},
 	{
 		id: 7,
 		class: 'fab fa-twitter fa-2x',
-		type: 'link',
+		type: 'link sound',
 		name: 'Twitter',
 		route: 'https://twitter.com/VegurS'
 	},
 	{
 		id: 8,
 		class: 'fas fa-envelope-open fa-2x',
-		type: 'link',
+		type: 'link sound',
 		name: 'Mail',
 		route: 'mailto:nsvegur@gmail.com'
 	},
@@ -72,14 +72,14 @@ export const dockIcons = [
 	{
 		id: 9,
 		class: 'fas fa-moon fa-2x',
-		type: 'icon',
+		type: 'icon sound',
 		name: 'Theme',
 		route: ''
 	},
 	{
 		id: 10,
 		class: 'fas fa-volume-off fa-2x',
-		type: 'icon',
+		type: 'icon sound',
 		name: 'Sound',
 		route: ''
 	}
