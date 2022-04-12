@@ -71,6 +71,9 @@
 		width: 100%;
 		padding-left: 40px;
 		border-left: dotted 2px var(--dotted-border);
+		@media screen and (max-width: 658px) {
+			margin-left: -40px;
+		}
 		&:first-child div {
 			margin-top: 20px;
 		}

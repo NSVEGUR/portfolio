@@ -14,7 +14,10 @@
 
 <Motion variants={pageTransitionVariants} initial="hidden" animate="visible" let:motion>
 	<div use:motion>
-		<h1>Education</h1>
+		<div class="head">
+			<h1>Education</h1>
+			<h2>Track of my learning and attainment I gained so far...</h2>
+		</div>
 		<div class="timeline">
 			<div class="line" />
 			<div class="section show-me">
@@ -95,8 +98,12 @@
 			color: var(--secondary-text-color);
 		}
 	}
-	h1 {
+	.head {
 		text-align: center;
+		h2 {
+			font-size: 1rem;
+			color: var(--secondary-text-color);
+		}
 	}
 	.timeline {
 		position: relative;

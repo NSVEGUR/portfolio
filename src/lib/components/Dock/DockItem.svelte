@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { interpolate } from 'popmotion';
-	import { spring } from 'svelte/motion';
+	import { spring, tweened } from 'svelte/motion';
+	import { sineInOut } from 'svelte/easing';
 	import ButtonBase from './ButtonBase.svelte';
 	import type { dockIcon } from '../../utils/data/dock';
 	import { onMount } from 'svelte';
@@ -72,22 +73,15 @@
 
 	$: raf = requestAnimationFrame(() => animate(mouseX));
 
-	const click = (e: any) => {
-		e.target.closest('.shake').animate(
-			[
-				{
-					transform: 'translateY(-5rem)'
-				},
-				{
-					transform: 'translateX(0)'
-				}
-			],
-			{
-				duration: 750,
-				easing: 'cubic-bezier(0.42, 0, 0.58, 1)'
-			}
-		);
-	};
+	const appOpenIconBounceTransform = tweened(0, {
+		duration: 400,
+		easing: sineInOut
+	});
+
+	async function openApp(e: MouseEvent) {
+		await appOpenIconBounceTransform.set(-39.2);
+		appOpenIconBounceTransform.set(0);
+	}
 </script>
 
 <svelte:window
@@ -98,7 +92,7 @@
 
 <section>
 	{#if screenWidth >= 700}
-		<div on:click={click} class="shake">
+		<div on:click={openApp} style="transform: translate3d(0, {$appOpenIconBounceTransform}%, 0)">
 			<ButtonBase {width} buttonBase={section}>
 				<i
 					bind:this={el}
@@ -109,7 +103,7 @@
 		</div>
 	{:else}
 		<ButtonBase {width} buttonBase={section}>
-			<i bind:this={el} style="width: {width}; height: {width};" class={section.class} />
+			<i style="width: 50px; height: 50px;" class={section.class} />
 		</ButtonBase>
 	{/if}
 </section>

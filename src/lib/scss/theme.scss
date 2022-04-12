@@ -7,14 +7,14 @@
 }
 
 :root {
-	//Light theme
-	--primary-color: #fcfcfc;
-	--primary-accent-color: #ffffff;
-	--secondary-accent-color: #f3f3f3;
-	--primary-text-color: #000000;
-	--secondary-text-color: #9e9e9f;
-	--dotted-border: #e3e2e2;
-	--hover-color: rgba(0, 0, 0, 0.05);
+	//Dark theme
+	--primary-color: #161616;
+	--primary-accent-color: #161616;
+	--secondary-accent-color: #222222;
+	--primary-text-color: #ffffff;
+	--secondary-text-color: #a0a0a0;
+	--dotted-border: #313030;
+	--hover-color: rgba(255, 255, 255, 0.05);
 	//Fonts
 	--primary-font: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial',
 		sans-serif;
@@ -24,13 +24,13 @@
 	--secondary-font-size: 2rem;
 }
 
-.dark-theme {
-	//Dark theme
-	--primary-color: #161616;
-	--primary-accent-color: #161616;
-	--secondary-accent-color: #222222;
-	--primary-text-color: #ffffff;
-	--secondary-text-color: #a0a0a0;
-	--dotted-border: #313030;
-	--hover-color: rgba(255, 255, 255, 0.05);
+.light-theme {
+	//light theme
+	--primary-color: #fcfcfc;
+	--primary-accent-color: #ffffff;
+	--secondary-accent-color: #f3f3f3;
+	--primary-text-color: #000000;
+	--secondary-text-color: #9e9e9f;
+	--dotted-border: #e3e2e2;
+	--hover-color: rgba(0, 0, 0, 0.05);
 }

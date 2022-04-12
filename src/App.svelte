@@ -3,7 +3,7 @@
 	import Home from './lib/routes/Home/Home.svelte';
 	import About from './lib/routes/About/About.svelte';
 	import Projects from './lib/routes/Projects/Projects.svelte';
-	import Blogs from './lib/routes/Blogs/Blogs.svelte';
+	import Writings from './lib/routes/Writings/Writings.svelte';
 	import Education from './lib/routes/Education/Education.svelte';
 	import { Route } from './lib/store/store';
 
@@ -19,8 +19,8 @@
 		case 'Projects':
 			componentRoute = Projects;
 			break;
-		case 'Blogs':
-			componentRoute = Blogs;
+		case 'Writings':
+			componentRoute = Writings;
 			break;
 		case 'Education':
 			componentRoute = Education;

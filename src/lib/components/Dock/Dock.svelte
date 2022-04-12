@@ -4,9 +4,8 @@
 	import { dockIcons } from '../../utils/data/dock';
 	import { Route, SoundFlag } from '../../store/store';
 	let mouseX: number | null = null;
-	const routingIcons: string[] = ['Home', 'About', 'Education', 'Blogs', 'Projects'];
+	const routingIcons: string[] = ['Home', 'About', 'Education', 'Writings', 'Projects'];
 	onMount(() => {
-		const icons = document.querySelectorAll('.icon');
 		const theme = document.getElementById('Theme');
 		const sound = document.getElementById('Sound');
 		const clickables = document.querySelectorAll('.sound');
@@ -14,48 +13,50 @@
 		const soundOn = new Audio('/musics/soundon.wav');
 		const soundOff = new Audio('/musics/soundoff.wav');
 		const themeSound = new Audio('/musics/theme.wav');
+		const dock = document.getElementById('dock');
 
 		clickables.forEach((clickable) => {
 			clickable.addEventListener('click', (e: any) => {
 				const route = e.target.closest('.sound').dataset?.class;
+			});
+		});
+
+		dock.addEventListener('click', (e: any) => {
+			if (!e.target.closest('.icon')) return;
+			e.preventDefault();
+			const route = e.target.closest('.icon').dataset?.class;
+			$Route = route;
+			if (routingIcons.includes(route)) {
+				const iconDots = document.querySelectorAll('.icon-dot');
+				iconDots.forEach((iconDot) => {
+					iconDot.classList.remove('active');
+				});
+				const activeIcon = e.target.closest('.icon').dataset?.iconid;
+				const activeDot: HTMLElement = document.querySelector(`[data-dotid="${activeIcon}"]`);
+				activeDot.classList.add('active');
+			} else if (route === 'Theme') {
+				document.body.classList.toggle('light-theme');
+				theme.querySelector('i').classList.toggle('fa-moon');
+				theme.querySelector('i').classList.toggle('fa-sun');
+				if ($SoundFlag) {
+					themeSound.play();
+				}
+			} else if (route === 'Sound') {
+				sound.querySelector('i').classList.toggle('fa-volume-up');
+				sound.querySelector('i').classList.toggle('fa-volume-off');
+				if ($SoundFlag) {
+					soundOff.play();
+				} else {
+					soundOn.play();
+				}
+				$SoundFlag = !$SoundFlag;
+			}
+			if (e.target.closest('.sound')) {
 				if (route === 'Theme' || route === 'Sound') return;
 				if ($SoundFlag) {
 					clickSound.play();
 				}
-			});
-		});
-
-		icons.forEach((icon) => {
-			icon.addEventListener('click', (e: any) => {
-				e.preventDefault();
-				const route = e.target.closest('.icon').dataset?.class;
-				$Route = route;
-				if (routingIcons.includes(route)) {
-					const iconDots = document.querySelectorAll('.icon-dot');
-					iconDots.forEach((iconDot) => {
-						iconDot.classList.remove('active');
-					});
-					const activeIcon = e.target.closest('.icon').dataset?.iconid;
-					const activeDot: HTMLElement = document.querySelector(`[data-dotid="${activeIcon}"]`);
-					activeDot.classList.add('active');
-				}
-			});
-		});
-		theme.addEventListener('click', () => {
-			document.body.classList.toggle('dark-theme');
-			theme.querySelector('i').classList.toggle('fa-sun');
-			if ($SoundFlag) {
-				themeSound.play();
 			}
-		});
-		sound.addEventListener('click', () => {
-			sound.querySelector('i').classList.toggle('fa-volume-up');
-			if ($SoundFlag) {
-				soundOff.play();
-			} else {
-				soundOn.play();
-			}
-			$SoundFlag = !$SoundFlag;
 		});
 	});
 </script>
@@ -63,6 +64,7 @@
 <section class="dock-container">
 	<div
 		class="dock-el"
+		id="dock"
 		on:mousemove={(event) => (mouseX = event.x)}
 		on:mouseleave={() => (mouseX = null)}
 	>

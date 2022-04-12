@@ -4,42 +4,42 @@ export const dockIcons = [
 		class: 'fas fa-home fa-2x',
 		type: 'icon sound',
 		name: 'Home',
-		route: ''
+		route: '#'
 	},
 	{
 		id: 2,
 		class: 'fas fa-user fa-2x',
 		type: 'icon sound',
 		name: 'About',
-		route: ''
+		route: '#'
 	},
 	{
 		id: 3,
 		class: 'fas fa-lightbulb fa-2x',
 		type: 'icon sound',
 		name: 'Projects',
-		route: ''
+		route: '#'
 	},
 	{
 		id: 4,
 		class: 'fas fa-pencil-alt fa-2x',
 		type: 'icon sound',
-		name: 'Blogs',
-		route: ''
+		name: 'Writings',
+		route: '#'
 	},
 	{
 		id: 5,
 		class: 'fas fa-user-graduate fa-2x',
 		type: 'icon sound',
 		name: 'Education',
-		route: ''
+		route: '#'
 	},
 	{
 		id: 0,
 		class: 'dock-div',
 		type: 'div',
 		name: 'none',
-		route: ''
+		route: '#'
 	},
 	{
 		id: 6,
@@ -67,21 +67,21 @@ export const dockIcons = [
 		class: 'dock-div',
 		type: 'div',
 		name: 'none',
-		route: ''
+		route: '#'
 	},
 	{
 		id: 9,
-		class: 'fas fa-moon fa-2x',
+		class: 'fas fa-sun fa-2x',
 		type: 'icon sound',
 		name: 'Theme',
-		route: ''
+		route: '#'
 	},
 	{
 		id: 10,
-		class: 'fas fa-volume-off fa-2x',
+		class: 'fas fa-volume-up fa-2x',
 		type: 'icon sound',
 		name: 'Sound',
-		route: ''
+		route: '#'
 	}
 ];
 

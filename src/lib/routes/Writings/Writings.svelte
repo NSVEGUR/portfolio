@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { Motion } from 'svelte-motion';
-	import { pageTransitionVariants } from './../../utils/variants';
+	import { pageTransitionVariants } from '../../utils/variants';
 </script>
 
 <svelte:head>
-	<title>Blogs – Nagasai Vegur</title>
+	<title>Writings – Nagasai Vegur</title>
 </svelte:head>
 
 <Motion variants={pageTransitionVariants} initial="hidden" animate="visible" let:motion>
 	<div class="dotted" use:motion>
-		<h2>Blogs</h2>
+		<h2>Writings</h2>
 		<h3>A collection of my <span>somewhat</span> (un) organised writings.</h3>
 		<div>
 			<p>Yet to come.</p>

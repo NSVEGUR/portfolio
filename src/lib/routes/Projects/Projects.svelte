@@ -131,6 +131,7 @@
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
+
 		.project-dot {
 			width: 100%;
 			flex: 1;
@@ -174,6 +175,12 @@
 				margin-top: 20px;
 				display: flex;
 				gap: 10px;
+			}
+			@media screen and (max-width: 658px) {
+				p,
+				a {
+					font-size: 0.8rem;
+				}
 			}
 		}
 		p {
