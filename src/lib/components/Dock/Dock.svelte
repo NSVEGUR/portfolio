@@ -8,18 +8,11 @@
 	onMount(() => {
 		const theme = document.getElementById('Theme');
 		const sound = document.getElementById('Sound');
-		const clickables = document.querySelectorAll('.sound');
 		const clickSound = new Audio('/musics/click.wav');
 		const soundOn = new Audio('/musics/soundon.wav');
 		const soundOff = new Audio('/musics/soundoff.wav');
 		const themeSound = new Audio('/musics/theme.wav');
 		const dock = document.getElementById('dock');
-
-		clickables.forEach((clickable) => {
-			clickable.addEventListener('click', (e: any) => {
-				const route = e.target.closest('.sound').dataset?.class;
-			});
-		});
 
 		dock.addEventListener('click', (e: any) => {
 			if (!e.target.closest('.icon')) return;
@@ -43,7 +36,7 @@
 				}
 			} else if (route === 'Sound') {
 				sound.querySelector('i').classList.toggle('fa-volume-up');
-				sound.querySelector('i').classList.toggle('fa-volume-off');
+				sound.querySelector('i').classList.toggle('fa-volume-mute');
 				if ($SoundFlag) {
 					soundOff.play();
 				} else {

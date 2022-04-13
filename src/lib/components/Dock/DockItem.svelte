@@ -91,8 +91,8 @@
 />
 
 <section>
-	{#if screenWidth >= 700}
-		<div on:click={openApp} style="transform: translate3d(0, {$appOpenIconBounceTransform}%, 0)">
+	<div on:click={openApp} style="transform: translate3d(0, {$appOpenIconBounceTransform}%, 0)">
+		{#if screenWidth >= 700}
 			<ButtonBase {width} buttonBase={section}>
 				<i
 					bind:this={el}
@@ -100,12 +100,12 @@
 					class={section.class}
 				/>
 			</ButtonBase>
-		</div>
-	{:else}
-		<ButtonBase {width} buttonBase={section}>
-			<i style="width: 50px; height: 50px;" class={section.class} />
-		</ButtonBase>
-	{/if}
+		{:else}
+			<ButtonBase {width} buttonBase={section}>
+				<i style="width: 50px; height: 50px;" class={section.class} />
+			</ButtonBase>
+		{/if}
+	</div>
 </section>
 
 <style lang="scss">
