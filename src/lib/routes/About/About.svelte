@@ -25,10 +25,21 @@
 		</div>
 		<div>
 			<p>
-				Processing with <a href="https://github.com/NSVEGUR">typescript</a> , painting in css, reacting
-				on svelte, widgeting with flutter, competing in cplusplus, skating on python and many more.
+				Processing with typescript , painting in css, reacting on svelte & next, widgeting with
+				flutter, running as node, competing in cplusplus, skating on python and many more.
 			</p>
 			<span>I'm Cooking.</span>
+		</div>
+		<div>
+			<ul>
+				<li>
+					Developer in <a href="https://github.com/WebOpsIIITDMK" target="_blank">WebOps</a>, IIITDM
+					since September 2021.
+				</li>
+				<li>Developer for VBS Academy, Raichur since December 2021.</li>
+				<li>Full Stack Developer for MagicDot, Bangalore since March 2022.</li>
+			</ul>
+			<span>My Dinings.</span>
 		</div>
 		<div>
 			<ul>
@@ -55,7 +66,7 @@
 	a {
 		position: relative;
 	}
-	p a::after {
+	a::after {
 		content: '';
 		position: absolute;
 		left: 0;
@@ -67,10 +78,13 @@
 	}
 	.dotted {
 		margin-left: -30px;
-		min-height: 100vh;
+		padding-bottom: 10rem;
 		width: 100%;
 		padding-left: 40px;
 		border-left: dotted 2px var(--dotted-border);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
 		@media screen and (max-width: 658px) {
 			margin-left: -40px;
 		}

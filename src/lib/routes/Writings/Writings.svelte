@@ -19,12 +19,15 @@
 			target="_blank"
 		>
 			<h3>The Unlove Story</h3>
-			<p>A lovestory? novel written by me at the time of lockdown.</p>
-			<span>April 2020.</span>
+			<p>Lovestory? novel written in the spaces of dilemma.</p>
 		</a>
-		<div class="writings">
-			<p>Yet to come.</p>
-			<span>May 2022.</span>
+		<a class="writings" href="https://friends-nsvegur.vercel.app/" target="_blank">
+			<h3>F&#183;R&#183;I&#183;E&#183;N&#183;D&#183;S</h3>
+			<p>Blog site on friends sitcom, freak page inspired from cyber markups.</p>
+		</a>
+		<div class="timings">
+			<div>April 2020.</div>
+			<div>December 2021.</div>
 		</div>
 	</div>
 </Motion>
@@ -51,6 +54,7 @@
 		width: 100%;
 		padding-left: 40px;
 		border-left: dotted 2px var(--dotted-border);
+		position: relative;
 		.writings {
 			padding: 10px;
 			position: relative;
@@ -62,10 +66,10 @@
 			min-height: 100px;
 			h3 {
 				color: var(--primary-text-color);
-				font-size: 1.4rem;
+				font-size: 1.2rem;
 			}
 			p {
-				font-size: 1rem;
+				font-size: 0.9rem;
 			}
 			&:hover {
 				background-color: var(--hover-color);
@@ -73,9 +77,26 @@
 			span {
 				position: absolute;
 				left: -110px;
+				font-size: 0.9rem;
 				transform: rotate(90deg);
 				font-family: var(--secondary-font);
 				color: var(--primary-text-color);
+			}
+		}
+		.timings {
+			font-family: var(--secondary-font);
+			color: var(--primary-text-color);
+			font-size: 0.9rem;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			gap: 40px;
+			position: absolute;
+			top: 150px;
+			left: -50px;
+			div {
+				transform: rotate(270deg);
+				min-height: 100px;
 			}
 		}
 	}
